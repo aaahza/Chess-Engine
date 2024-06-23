@@ -1,8 +1,9 @@
+
 class Square:
 
-    ALPHACOLS = {0: "a", 1: "b", 2: "c", 3: "d", 4: "e", 5: "f", 6: "g", 7: "h"}
+    ALPHACOLS = {0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h'}
 
-    def __init__(self, row, col, piece=None) -> None:
+    def __init__(self, row, col, piece=None):
         self.row = row
         self.col = col
         self.piece = piece
@@ -20,21 +21,21 @@ class Square:
     def has_team_piece(self, color):
         return self.has_piece() and self.piece.color == color
 
-    def has_rival_piece(self, color):
+    def has_enemy_piece(self, color):
         return self.has_piece() and self.piece.color != color
 
-    def isempty_or_rival(self, color):
-        return self.isempty() or self.has_rival_piece(color)
+    def isempty_or_enemy(self, color):
+        return self.isempty() or self.has_enemy_piece(color)
 
     @staticmethod
     def in_range(*args):
         for arg in args:
             if arg < 0 or arg > 7:
                 return False
-
+        
         return True
 
     @staticmethod
     def get_alphacol(col):
-        ALPHACOLS = {0: "a", 1: "b", 2: "c", 3: "d", 4: "e", 5: "f", 6: "g", 7: "h"}
+        ALPHACOLS = {0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h'}
         return ALPHACOLS[col]
