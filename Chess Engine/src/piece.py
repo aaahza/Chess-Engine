@@ -1,7 +1,6 @@
 import os
 
 class Piece:
-
     def __init__(self, name, color, value, texture=None, texture_rect=None):
         self.name = name
         self.color = color
